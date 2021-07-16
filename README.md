@@ -10,6 +10,9 @@ Therefore, this testing is suitable for the Integration tests.
 #### Good Fit
 End-to-end tests would be the best, assuming the whole application is a black box.
 
+#### When to Avoid `@SpringBootTest`
+1. Integration tests with @SpringBootTest can take a very long time to start,
+which is mostly **related to database initialization**, **the configuration of remote sources**, and **other IO (input/output)**.
 
 ## Demo
 
