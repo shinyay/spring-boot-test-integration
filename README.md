@@ -16,6 +16,9 @@ which is mostly **related to database initialization**, **the configuration of r
 2. If you intend to test the HTTP layer, all other components are created, even not in use.
 3. External test data becomes a hard dependency, and it must be either provisioned before the application starts or shared.
 
+As an Integration Test with `@SpringBootTest`
+![springboottest](https://user-images.githubusercontent.com/3072734/126014256-612a0f2a-fd4f-48a5-9c2f-cbf6c14b49fc.png)
+
 
 
 ## Demo
