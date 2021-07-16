@@ -1,6 +1,7 @@
-# Name
+# Spring Boot Integration Tests
 
-Overview
+The `@SpringBootTest` annotation automagically spins up your application with all dependencies for use in tests.
+Therefore this testing is suitable for the Integration tests.
 
 ## Description
 
