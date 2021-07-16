@@ -19,6 +19,8 @@ which is mostly **related to database initialization**, **the configuration of r
 As an Integration Test with `@SpringBootTest`
 ![springboottest](https://user-images.githubusercontent.com/3072734/126014256-612a0f2a-fd4f-48a5-9c2f-cbf6c14b49fc.png)
 
+As a Slice Test with `@WebMvcTest`
+![webmvctest](https://user-images.githubusercontent.com/3072734/126014356-6ed1b6b5-21f1-40ce-b465-48ece1789d29.png)
 
 
 ## Demo
