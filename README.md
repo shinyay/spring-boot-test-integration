@@ -13,6 +13,10 @@ End-to-end tests would be the best, assuming the whole application is a black bo
 #### When to Avoid `@SpringBootTest`
 1. Integration tests with @SpringBootTest can take a very long time to start,
 which is mostly **related to database initialization**, **the configuration of remote sources**, and **other IO (input/output)**.
+2. If you intend to test the HTTP layer, all other components are created, even not in use.
+3. External test data becomes a hard dependency, and it must be either provisioned before the application starts or shared.
+
+
 
 ## Demo
 
