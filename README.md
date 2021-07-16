@@ -1,9 +1,15 @@
 # Spring Boot Integration Tests
 
 The `@SpringBootTest` annotation automagically spins up your application with all dependencies for use in tests.
-Therefore this testing is suitable for the Integration tests.
+Therefore, this testing is suitable for the Integration tests.
 
 ## Description
+### Pros and Cons for `@SpringBootTest`
+`@SpringBootTest` bootstraps the whole application
+
+#### Good Fit
+End-to-end tests would be the best, assuming the whole application is a black box.
+
 
 ## Demo
 
