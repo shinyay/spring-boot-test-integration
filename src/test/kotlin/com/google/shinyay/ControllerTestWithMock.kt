@@ -23,4 +23,11 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
             .andExpect(content().string(containsString("Hello")))
     }
 
+    @Test
+    fun greetingShouldBeOk() {
+        mockMvc.perform(get("/greeting"))
+            .andDo(print())
+            .andExpect(status().isOk)
+    }
+
 }
