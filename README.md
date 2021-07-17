@@ -5,7 +5,11 @@ Therefore, this testing is suitable for the Integration tests.
 
 ## Description
 ### Integration Tests vs. Unit Tests
-- **Unit Tests** : Unit tests cover a single “unit”, where a unit commonly is a single class
+- **Unit Tests** : Unit tests cover a single "unit", where a unit commonly is a single class
+- **Integration Tests** :
+  - Integration tests cover multiple "units" which test the interaction between two or more clusters of cohesive classes
+  - Integration tests cover multiple "layers" which test between the multiple units on multiple layers.
+  - Integration tests cover the whole path through the application. `request -> database state -> response`
 
 ### Pros and Cons for `@SpringBootTest`
 `@SpringBootTest` bootstraps the whole application
