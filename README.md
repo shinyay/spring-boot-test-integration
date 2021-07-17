@@ -4,6 +4,9 @@ The `@SpringBootTest` annotation automagically spins up your application with al
 Therefore, this testing is suitable for the Integration tests.
 
 ## Description
+### Integration Tests vs. Unit Tests
+- **Unit Tests** : Unit tests cover a single “unit”, where a unit commonly is a single class
+
 ### Pros and Cons for `@SpringBootTest`
 `@SpringBootTest` bootstraps the whole application
 
