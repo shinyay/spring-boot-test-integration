@@ -5,10 +5,15 @@ Therefore, this testing is suitable for the Integration tests.
 
 ## Description
 ### Integration Tests vs. Unit Tests
-- **Unit Tests** : Unit tests cover a single “unit”, where a unit commonly is a single class
+- **Unit Tests** : Unit tests cover a single "unit", where a unit commonly is a single class
+- **Integration Tests** :
+  - Integration tests cover multiple "units" which test the interaction between two or more clusters of cohesive classes
+  - Integration tests cover multiple "layers" which test between the multiple units on multiple layers.
+  - Integration tests cover the whole path through the application. `request -> database state -> response`
 
 ### Pros and Cons for `@SpringBootTest`
-`@SpringBootTest` bootstraps the whole application
+`@SpringBootTest` bootstraps the whole application.
+`@SpringBootTest` creates an application context containing all the objects we need for all the test types.
 
 #### Good Fit
 End-to-end tests would be the best, assuming the whole application is a black box.
@@ -25,6 +30,9 @@ As an Integration Test with `@SpringBootTest`
 As a Slice Test with `@WebMvcTest`
 ![webmvctest](https://user-images.githubusercontent.com/3072734/126014356-6ed1b6b5-21f1-40ce-b465-48ece1789d29.png)
 
+### Creating an ApplicationContext with @SpringBootTest
+`@SpringBootTest` by default searches in the current package of the test class
+And it searches upwards through the package structure, looking for a class annotated with `@SpringBootConfiguration`, which `@SpringBootApplication` includes, from which it then reads the configuration to create an application context.
 
 ## Demo
 
