@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class BookController(val service: BookService) {
 
-//    @PostMapping("/book")
-//    fun displayBook(@RequestBody book:Book): Book {
-//        return service.displayBook(book)
-//    }
+    @GetMapping("/book")
+    fun displayBook(): MutableList<Book> {
+        return service.displayAllBooks()
+    }
 
     @PostMapping("/book")
     fun registerBook(@RequestBody book:Book): Book {
