@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 @Service
 class BookService(val repository: BookDaoRepository) {
 
-    fun displayAllBooks(book: Book): MutableList<Book> {
+    fun displayAllBooks(): MutableList<Book> {
         return repository.findAll()
     }
 
