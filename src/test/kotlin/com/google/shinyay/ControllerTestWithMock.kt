@@ -52,4 +52,18 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
         val result = repository.findAllByAuthorOrderByPrice("shinyay").get(0)
         assertThat(result.title).isEqualTo("Testing")
     }
+
+    @Test
+    fun bookQueryThroughAllLayersSouldReturnBook() {
+        val testBook = Book(title = "Query", author = "shinyay", price = 1010)
+
+        mockMvc.perform(post("/book")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(ObjectMapper().writeValueAsString(testBook))
+        )
+            .andExpect(status().isOk)
+
+        val result = repository.findAll().get(0)
+        assertThat(result.title).isEqualTo("Query")
+    }
 }
