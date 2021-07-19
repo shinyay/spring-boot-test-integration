@@ -1,1 +1,1 @@
-rootProject.name = "spring-boot-test-getting-started"
+rootProject.name = "spring-boot-test-integration"
