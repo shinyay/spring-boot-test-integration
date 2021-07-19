@@ -40,7 +40,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
     lateinit var repository: BookDaoRepository
 
     @Test
-    fun bookRegistrationThroughAllLayers() {
+    fun bookRegistrationThroughAllLayersShouldReturnBook() {
         val testBook = Book(title = "Testing", author = "shinyay", price = 1000)
 
         mockMvc.perform(post("/book")
