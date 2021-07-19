@@ -2,6 +2,8 @@ package com.google.shinyay
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.shinyay.entity.Book
+import com.google.shinyay.repository.BookDaoRepository
+import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -34,6 +36,9 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
             .andExpect(status().isOk)
     }
 
+    @Autowired
+    lateinit var repository: BookDaoRepository
+
     @Test
     fun bookRegistrationThroughAllLayers() {
         val testBook = Book(title = "Testing", author = "shinyay", price = 1000)
@@ -43,5 +48,8 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
             .content(ObjectMapper().writeValueAsString(testBook))
         )
             .andExpect(status().isOk)
+
+        val result = repository.findAllByAuthorOrderByPrice("shinyay").get(0)
+        assertThat(result.title).isEqualTo("Testing")
     }
 }
