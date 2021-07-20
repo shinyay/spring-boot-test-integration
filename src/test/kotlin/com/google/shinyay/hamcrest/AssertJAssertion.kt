@@ -22,4 +22,13 @@ class AssertJAssertion {
         assertThat(service.returnStringValue()).isNotEqualTo("bar")
     }
 
+//    String ---------------------------------------------------------------
+
+    // startsWith()
+    @Test
+    fun startCharacter() {
+        assertThat(service.returnStringValue()).startsWith("f")
+    }
+
+
 }
