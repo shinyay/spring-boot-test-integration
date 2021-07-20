@@ -15,4 +15,9 @@ class AssertJAssertion {
         assertThat(service.returnStringValue()).isEqualTo("foo")
     }
 
+    @Test
+    fun notSameValue() {
+        assertThat(service.returnStringValue()).isNotEqualTo("bar")
+    }
+
 }
