@@ -47,4 +47,10 @@ class AssertJAssertion {
     fun ignoreCaseCharacter() {
         assertThat(service.returnStringValue()).isEqualToIgnoringCase("FOO")
     }
+
+    //
+    @Test
+    fun shouldHaveBlank() {
+        assertThat(service.returnBlank()).isNullOrEmpty()
+    }
 }
