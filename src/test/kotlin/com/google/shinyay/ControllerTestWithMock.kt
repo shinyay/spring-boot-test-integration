@@ -3,6 +3,7 @@ package com.google.shinyay
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.shinyay.entity.Book
 import com.google.shinyay.repository.BookDaoRepository
+import com.google.shinyay.service.BookService
 import org.assertj.core.api.Assertions.assertThat
 import org.hamcrest.Matchers.containsString
 import org.junit.jupiter.api.Test
@@ -21,6 +22,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 @AutoConfigureMockMvc
 class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 
+    @Autowired
+    lateinit var repository: BookDaoRepository
+
+    @Autowired
+    lateinit var service: BookService
+
     @Test
     fun helloShouldReturnDefaultMessage() {
         mockMvc.perform(get("/hello"))
@@ -36,8 +43,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
             .andExpect(status().isOk)
     }
 
-    @Autowired
-    lateinit var repository: BookDaoRepository
+
 
     @Test
     fun bookRegistrationThroughAllLayersShouldReturnBook() {
@@ -54,7 +60,7 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
     }
 
     @Test
-    fun bookQueryThroughAllLayersSouldReturnBook() {
+    fun bookQueryThroughAllLayersShouldReturnBook() {
         val testBook = Book(title = "Query", author = "shinyay", price = 1010)
 
         mockMvc.perform(post("/book")
@@ -65,5 +71,29 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 
         val result = repository.findAll().get(0)
         assertThat(result.title).isEqualTo("Query")
+    }
+
+    @Test
+    fun totalFeeThroughServiceLayersShouldSumPrices() {
+        val testBook1 = Book(title = "Java", author = "shinyay", price = 500)
+        val testBook2 = Book(title = "Kotlin", author = "shinyay", price = 800)
+        val testBook3 = Book(title = "Spring", author = "shinyay", price = 1000)
+
+        mockMvc.perform(post("/book")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(ObjectMapper().writeValueAsString(testBook1))
+        )
+            .andExpect(status().isOk)
+        mockMvc.perform(post("/book")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(ObjectMapper().writeValueAsString(testBook2))
+        )
+        mockMvc.perform(post("/book")
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(ObjectMapper().writeValueAsString(testBook3))
+        )
+
+        val result = service.countTotalFee()
+        assertThat(result).isEqualTo(2300)
     }
 }
