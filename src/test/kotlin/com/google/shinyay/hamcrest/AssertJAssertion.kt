@@ -10,11 +10,13 @@ class AssertJAssertion {
 
 //    Basic ---------------------------------------------------------------
 
+    // isEqualTo()
     @Test
     fun sameValue() {
         assertThat(service.returnStringValue()).isEqualTo("foo")
     }
 
+    // isNotEqualTo()
     @Test
     fun notSameValue() {
         assertThat(service.returnStringValue()).isNotEqualTo("bar")
