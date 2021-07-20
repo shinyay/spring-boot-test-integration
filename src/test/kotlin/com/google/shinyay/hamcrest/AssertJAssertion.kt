@@ -30,10 +30,15 @@ class AssertJAssertion {
         assertThat(service.returnStringValue()).startsWith("f")
     }
 
-    // endsWith
+    // endsWith()
     @Test
     fun endCharacter() {
         assertThat(service.returnStringValue()).endsWith("f")
     }
 
+    // contains()
+    @Test
+    fun containCharacter() {
+        assertThat(service.returnStringValue()).contains("oo")
+    }
 }
