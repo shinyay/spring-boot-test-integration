@@ -30,5 +30,10 @@ class AssertJAssertion {
         assertThat(service.returnStringValue()).startsWith("f")
     }
 
+    // endsWith
+    @Test
+    fun endCharacter() {
+        assertThat(service.returnStringValue()).endsWith("f")
+    }
 
 }
