@@ -48,9 +48,15 @@ class AssertJAssertion {
         assertThat(service.returnStringValue()).isEqualToIgnoringCase("FOO")
     }
 
-    //
+    // isEmpty() or isNullOrEmpty()
     @Test
     fun shouldHaveBlank() {
         assertThat(service.returnBlank()).isNullOrEmpty()
+    }
+
+    // stringContainsInOrder()
+    @Test
+    fun shouldBeInOrder() {
+        assertThat(service.returnStringList()).containsSequence("Alice", "Bob", "Carol")
     }
 }
