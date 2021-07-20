@@ -41,4 +41,10 @@ class AssertJAssertion {
     fun containCharacter() {
         assertThat(service.returnStringValue()).contains("oo")
     }
+
+    // equalToIgnoringCase()
+    @Test
+    fun ignoreCaseCharacter() {
+        assertThat(service.returnStringValue()).isEqualToIgnoringCase("FOO")
+    }
 }
