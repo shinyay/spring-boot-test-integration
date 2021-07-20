@@ -14,4 +14,14 @@ class BookService(val repository: BookDaoRepository) {
     fun registerBook(book: Book): Book {
         return repository.save(book)
     }
+
+    fun countTotalFee(): Int {
+        val result = repository.findAll()
+        var totalFee: Int = 0
+
+        result.forEach { book ->
+            totalFee = (totalFee + book.price).toInt()
+        }
+        return totalFee
+    }
 }
