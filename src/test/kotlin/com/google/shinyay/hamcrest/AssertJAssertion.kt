@@ -139,5 +139,6 @@ class AssertJAssertion {
     fun shouldHavePropertyWithValue() {
         assertThat(service.returnGirl()).hasFieldOrPropertyWithValue("name", "Alice")
         assertThat(service.returnGirl()).hasFieldOrPropertyWithValue("age", 20)
+        assertThat(service.returnGirl()).isEqualTo(HamcrestService.People("Alice", 20, "Female"))
     }
 }
