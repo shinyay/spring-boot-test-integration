@@ -59,4 +59,13 @@ class AssertJAssertion {
     fun shouldBeInOrder() {
         assertThat(service.returnStringList()).containsSequence("Alice", "Bob", "Carol")
     }
+
+//    Collection ---------------------------------------------------------------
+
+    // containsSequence()
+    @Test
+    fun shouldBeInAnyOrder() {
+        assertThat(service.returnStringList()).hasSameElementsAs(listOf("Carol", "Bob", "Alice"))
+    }
+
 }
