@@ -124,4 +124,13 @@ class AssertJAssertion {
         assertThat(service.returnRandomIntNumber()).isLessThanOrEqualTo(10)
     }
 
+//    ---------------------------------------------------------------
+
+    // hasProperty()
+    @Test
+    fun shouldHaveProperty() {
+        assertThat(service.returnGirl()).hasFieldOrProperty("name")
+        assertThat(service.returnGirl()).hasFieldOrProperty("age")
+        assertThat(service.returnGirl()).hasFieldOrProperty("gender")
+    }
 }
