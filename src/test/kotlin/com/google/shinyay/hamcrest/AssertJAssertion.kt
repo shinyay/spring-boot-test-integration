@@ -111,4 +111,11 @@ class AssertJAssertion {
     fun shouldBeInRange() {
         assertThat(service.returnRandomDoubleNumber()).isBetween(0.0, 10.0)
     }
+
+    // isGreaterThan() or isGreaterThanOrEqualTo()
+    @Test
+    fun shouldBeGreater() {
+        assertThat(service.returnRandomIntNumber()).isGreaterThanOrEqualTo(1)
+    }
+
 }
