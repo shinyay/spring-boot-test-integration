@@ -68,4 +68,9 @@ class AssertJAssertion {
         assertThat(service.returnStringList()).hasSameElementsAs(listOf("Carol", "Bob", "Alice"))
     }
 
+    // contains()
+    @Test
+    fun shouldHaveItem() {
+        assertThat(service.returnStringList()).contains("Bob")
+    }
 }
