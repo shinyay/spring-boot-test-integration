@@ -103,4 +103,12 @@ class AssertJAssertion {
         testMap["language"] = "Japanese"
         assertThat(testMap).containsValue("Japanese")
     }
+
+//    Number ---------------------------------------------------------------
+
+    // isBetween()
+    @Test
+    fun shouldBeInRange() {
+        assertThat(service.returnRandomDoubleNumber()).isBetween(0.0, 10.0)
+    }
 }
