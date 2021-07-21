@@ -133,4 +133,11 @@ class AssertJAssertion {
         assertThat(service.returnGirl()).hasFieldOrProperty("age")
         assertThat(service.returnGirl()).hasFieldOrProperty("gender")
     }
+
+    // hasFieldOrProperty()
+    @Test
+    fun shouldHavePropertyWithValue() {
+        assertThat(service.returnGirl()).hasFieldOrPropertyWithValue("name", "Alice")
+        assertThat(service.returnGirl()).hasFieldOrPropertyWithValue("age", 20)
+    }
 }
