@@ -94,4 +94,5 @@ class AssertJAssertion {
         val testMap = service.returnMutableMap()
         testMap["language"] = "Japanese"
         assertThat(testMap).containsValue("Japanese")
+    }
 }
