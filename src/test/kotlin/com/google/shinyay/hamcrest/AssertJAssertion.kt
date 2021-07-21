@@ -73,4 +73,11 @@ class AssertJAssertion {
     fun shouldHaveItem() {
         assertThat(service.returnStringList()).contains("Bob")
     }
+
+    // hasSize()
+    @Test
+    fun shouldHaveSize() {
+        assertThat(service.returnStringList()).hasSize(3)
+    }
+
 }
