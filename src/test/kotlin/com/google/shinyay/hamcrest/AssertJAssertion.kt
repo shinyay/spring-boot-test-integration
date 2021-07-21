@@ -118,4 +118,10 @@ class AssertJAssertion {
         assertThat(service.returnRandomIntNumber()).isGreaterThanOrEqualTo(1)
     }
 
+    // lessThanOrEqualTo()
+    @Test
+    fun shouldBeLess() {
+        assertThat(service.returnRandomIntNumber()).isLessThanOrEqualTo(10)
+    }
+
 }
