@@ -80,4 +80,11 @@ class AssertJAssertion {
         assertThat(service.returnStringList()).hasSize(3)
     }
 
+//    Map ---------------------------------------------------------------
+
+    // emptyMap()
+    @Test
+    fun shouldBeEmptyMap() {
+        assertThat(service.returnMutableMap()).isEmpty()
+    }
 }
