@@ -88,9 +88,17 @@ class AssertJAssertion {
         assertThat(service.returnMutableMap()).isEmpty()
     }
 
-    // hasKey()
+    // containsKey()
     @Test
     fun shouldHaveKey() {
+        val testMap = service.returnMutableMap()
+        testMap["language"] = "Japanese"
+        assertThat(testMap).containsKey("language")
+    }
+
+    // containsValue()
+    @Test
+    fun shouldHaveValue() {
         val testMap = service.returnMutableMap()
         testMap["language"] = "Japanese"
         assertThat(testMap).containsValue("Japanese")
