@@ -37,7 +37,8 @@ And it searches upwards through the package structure, looking for a class annot
 ### AssertJ / Hamcrest
 
 |Description|AssertJ|Hamcrest|
-|Target|assertThat(xxx)|assertThat().xxx|
+|-----------|-------|--------|
+|Specify the target|assertThat(target.xxx())|assertThat(target).xxx()|
 
 ## Demo
 
