@@ -34,6 +34,11 @@ As a Slice Test with `@WebMvcTest`
 `@SpringBootTest` by default searches in the current package of the test class
 And it searches upwards through the package structure, looking for a class annotated with `@SpringBootConfiguration`, which `@SpringBootApplication` includes, from which it then reads the configuration to create an application context.
 
+### AssertJ / Hamcrest
+
+|Description|AssertJ|Hamcrest|
+|Target|assertThat(xxx)|assertThat().xxx|
+
 ## Demo
 
 ## Features
