@@ -36,8 +36,16 @@ And it searches upwards through the package structure, looking for a class annot
 
 ### AssertJ / Hamcrest
 
-|Description|AssertJ|Hamcrest|
-|Target|assertThat(xxx)|assertThat().xxx|
+|Assertions|AssertJ|Hamcrest|
+|-----------|-------|--------|
+|Specify the target|assertThat(target.xxx())|assertThat(target).xxx()|
+|True|is|isTrue|
+||||
+||||
+||||
+||||
+||||
+||||
 
 ## Demo
 
