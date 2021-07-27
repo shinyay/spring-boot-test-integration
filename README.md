@@ -41,10 +41,10 @@ And it searches upwards through the package structure, looking for a class annot
 |Specify the target|assertThat(target.xxx())|assertThat(target).xxx()|
 |True|is|isTrue|
 |False|is|isFalse|
-||||
-||||
-||||
-||||
+|Same Value|is|isEqualTo|
+|Not Same Value|is(not())|isNotEqualTo|
+|Start Character|startsWith|startsWith|
+|End Character|endsWith|endsWith|
 ||||
 
 ## Demo
