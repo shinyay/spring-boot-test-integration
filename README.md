@@ -45,7 +45,7 @@ And it searches upwards through the package structure, looking for a class annot
 |Not Same Value|is(not())|isNotEqualTo|
 |Start Character|startsWith|startsWith|
 |End Character|endsWith|endsWith|
-||||
+|String Existence|is(containsString())|contains<br>containsOnly<br>containsExactly<br>containsExactlyInAnyOrder<br>containsSequence<br>containsSubsequence<br>containsOnlyOnce<br>containsAnyOf|
 
 ## Demo
 
