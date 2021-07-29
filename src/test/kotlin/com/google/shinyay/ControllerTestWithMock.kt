@@ -67,13 +67,6 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 
     @Test
     fun bookRegistrationThroughAllLayersShouldReturnBook() {
-//        val testBook = Book(title = "Testing", author = "shinyay", price = 1000)
-//
-//        mockMvc.perform(post("/book")
-//            .contentType(MediaType.APPLICATION_JSON)
-//            .content(ObjectMapper().writeValueAsString(testBook))
-//        )
-//            .andExpect(status().isOk)
 
         val result = repository.findAllByAuthorOrderByPrice("shinyay").get(0)
         assertThat(result.title).isEqualTo("Java")
@@ -81,13 +74,6 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 
     @Test
     fun bookQueryThroughAllLayersShouldReturnBook() {
-//        val testBook = Book(title = "Query", author = "shinyay", price = 1010)
-//
-//        mockMvc.perform(post("/book")
-//            .contentType(MediaType.APPLICATION_JSON)
-//            .content(ObjectMapper().writeValueAsString(testBook))
-//        )
-//            .andExpect(status().isOk)
 
         val result = repository.findAll().get(1)
         assertThat(result.title).isEqualTo("Query")
@@ -95,23 +81,6 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
 
     @Test
     fun totalFeeThroughServiceLayersShouldSumPrices() {
-//        val testBook1 = Book(title = "Java", author = "shinyay", price = 500)
-//        val testBook2 = Book(title = "Kotlin", author = "shinyay", price = 800)
-//        val testBook3 = Book(title = "Spring", author = "shinyay", price = 1000)
-//
-//        mockMvc.perform(post("/book")
-//            .contentType(MediaType.APPLICATION_JSON)
-//            .content(ObjectMapper().writeValueAsString(testBook1))
-//        )
-//            .andExpect(status().isOk)
-//        mockMvc.perform(post("/book")
-//            .contentType(MediaType.APPLICATION_JSON)
-//            .content(ObjectMapper().writeValueAsString(testBook2))
-//        )
-//        mockMvc.perform(post("/book")
-//            .contentType(MediaType.APPLICATION_JSON)
-//            .content(ObjectMapper().writeValueAsString(testBook3))
-//        )
 
         val result = service.countTotalFee()
         assertThat(result).isEqualTo(5310)
