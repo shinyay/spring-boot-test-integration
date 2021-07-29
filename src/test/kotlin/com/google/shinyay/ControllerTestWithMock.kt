@@ -63,10 +63,6 @@ class ControllerTestWithMock(@Autowired val mockMvc: MockMvc) {
                     .content(ObjectMapper().writeValueAsString(book))
             )
         }
-//        mockMvc.perform(post("/book")
-//            .contentType(MediaType.APPLICATION_JSON)
-//            .content(ObjectMapper().writeValueAsString(testBook1))
-//        )
     }
 
     @Test
